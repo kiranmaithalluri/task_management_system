@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Username Entry Modal -->
+    <div id="username-modal" class="modal">
+      <div class="modal-content">
+        <h2>Welcome!</h2>
+        <p>Please enter your name:</p>
+        <input type="text" id="username-input" placeholder="Your name" />
+        <button id="save-username">Save</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <header>
+        <h1 id="welcome-message">Welcome, <span id="username"></span>!</h1>
+
+        <!-- Theme Toggle Button -->
+        <div id="theme-switch">
+          <button id="theme-toggle" onclick="toggleTheme()">
+            🌞 Light / 🌙 Dark Mode
+          </button>
+        </div>
+      </header>
+
+      <!-- Task Input Section -->
+      <div class="task-input">
+        <input type="text" id="task-input" placeholder="Add a task" />
+        <button onclick="addTask()">➕ Add Task</button>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-buttons">
+        <button id="show-all" class="active" onclick="filterTasks('all')">
+          All
+        </button>
+        <button id="show-pending" onclick="filterTasks('pending')">
+          Pending
+        </button>
+        <button id="show-completed" onclick="filterTasks('completed')">
+          Completed
+        </button>
+      </div>
+
+      <ul id="task-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
